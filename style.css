@@ -1,0 +1,189 @@
+/* 
+Moderate violet: hsl(263, 55%, 52%)
+Very dark grayish blue: hsl(217, 19%, 35%)
+Very dark blackish blue: hsl(219, 29%, 14%)
+White: hsl(0, 0%, 100%)
+
+### Neutral
+
+Light gray: hsl(0, 0%, 81%)
+Light grayish blue: hsl(210, 46%, 95%)
+
+Note for text colors:
+
+1. "Verified Graduate" has the same color as the person's name with 50% opacity
+2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity
+
+## Typography
+
+### Body Copy
+
+- Font size: 13px
+
+### Font
+
+- Family: [Barlow Semi Condensed](https://fonts.google.com/specimen/Barlow+Semi+Condensed)
+- Weights: 500, 600
+ */
+
+ @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+ :root{
+     --violet: hsl(263, 55%, 52%);
+     --darkGraykBlue: hsl(217, 19%, 35%);
+     --darkBlackBlue:hsl(219, 29%, 14%);
+     --white:hsl(0, 0%, 100%);
+    --lightGray: hsl(0, 0%, 81%);
+    --grayBlue: hsl(210, 46%, 95%);
+ }
+
+ *{
+     margin:0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ body{
+     font-family: 'Barlow Semi Condensed', sans-serif;
+     font-size: 15px;
+     font-weight: 500;
+     background: var(--grayBlue);
+ }
+
+.container{
+    display: grid;
+    place-items: center;
+    width: 90vw;
+    margin: 0 auto;
+    padding: 4rem 0;
+}
+
+
+.card{
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 3px 3px 5px rgba(0, 0 , 0, 0.5);
+}
+
+.card-header{
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.author{
+    border-radius: 50%;
+    margin-right: 18px;
+    border: 1px solid var(--white);
+}
+
+.author-first{
+    border: 1px solid var(--violet);
+}
+
+.author-desc{
+    color: var(--grayBlue);
+}
+
+.author-desc h4{
+    opacity: 50%;
+}
+
+.card-content{
+color: var(--white);
+}
+
+.card-content h2{
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+   font-size: 22px;
+   line-height: 1.5;
+}
+
+.card-content p{
+    opacity: 70%;
+    line-height: 1.6;
+}
+
+.first{
+    background: var(--violet);
+    background-image: url(./images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: 90% 8%;
+    background-size: 125px;
+}
+
+.second{
+    background: var(--darkGraykBlue);
+}
+
+.third{
+    background: var(--white);
+}
+
+.four{
+    background: var(--darkBlackBlue);
+}
+
+.five{
+    background: var(--white);
+}
+
+.five .author-desc{
+    color: var(--darkGraykBlue);
+}
+
+.five .card-content{
+    color: var(--darkGraykBlue);
+}
+
+.third .author-desc{
+    color: var(--darkGraykBlue);
+}
+
+.third .card-content{
+    color: var(--darkGraykBlue);
+}
+
+
+@media screen and (min-width: 992px){
+    .container{
+        width: 95vw;
+        gap: 1rem;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+.first{
+width: 650px;
+grid-column: 1 / span 2;
+grid-row: 1;
+}
+
+.second{
+width: 280px;
+grid-column: 3;
+grid-row: 1;
+}
+
+.third{
+ width: 320px;
+height: 400px;
+grid-column: 1 ;
+grid-row: 2;
+}
+
+.four{
+width: 610px;
+height: 400px;
+ grid-column: 2 / span 2;
+grid-row: 2;
+}
+
+.five{
+    width: 270px;
+    grid-column: 4;
+grid-row: 1 / span 2;
+}
+
+}
